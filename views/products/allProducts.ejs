@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Products</h1>
+    
+    <form action="/products" method="GET">
+        <input type="text" name="name" placeholder="Search products"/>
+    
+        <button type="submit" class="button">Search</button>
+    </form>
+    
+    <br>
+    
+    <div>
+        <% products.forEach(product => { %>
+            <div class="product-card">
+                <img src="<%= product.productImagePath %>"/>
+                <div class="card-content">
+                    <h4><%= product.name %></h4>
+                    <p><%= product.description %></p>
+                    
+                    <div class="card-bottom">
+                        <h5>$<%= product.price %></h5>
+                        <a href="/products" class="button"><i class="fas fa-shopping-cart"></i> Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

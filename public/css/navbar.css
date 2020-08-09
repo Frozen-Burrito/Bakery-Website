@@ -1,0 +1,28 @@
+div.nav-wrap {
+    background-color: rgb(20, 20, 20);
+}
+
+nav.main-nav {
+    width: 85%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.4rem;
+}
+
+nav.main-nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav.main-nav ul li a {
+    color: rgb(255, 255, 255);
+}
+
+a.logo {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}

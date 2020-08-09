@@ -1,0 +1,20 @@
+<div>
+    <input type="text" name="name" value="<%= product.name %>" placeholder="Product name"/>
+</div>
+
+<div>
+    <input type="number" name="price" value="<%= product.price %>" min="0" step="0.01" placeholder="Price"/>
+</div>
+
+<div>
+    <input type="number" name="inStock" value="<%= product.inStock %>" min="0" placeholder="Amount in stock"/>
+</div>
+
+<div>
+    <label>Image</label>
+    <input type="file" name="image"/>
+</div>
+
+<div>
+    <textarea name="description" placeholder="Product description"><%= product.description %></textarea>
+</div>

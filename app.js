@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/dbConfig');
 
 const router = require('./routes/index');
+const productRouter = require('./routes/products');
 
 dotenv.config({ path:'./config/config.env' });
 
@@ -27,6 +28,7 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/', router);
+app.use('/products', productRouter)
 
 const PORT = process.env.PORT || 3000;
 
