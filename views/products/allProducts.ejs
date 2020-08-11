@@ -9,10 +9,12 @@
     
     <br>
     
-    <div>
+    <div class="product-grid">
         <% products.forEach(product => { %>
             <div class="product-card">
-                <img src="<%= product.productImagePath %>"/>
+                <div class="image-container">
+                    <img src="<%= product.productImagePath %>"/>
+                </div>
                 <div class="card-content">
                     <h4><%= product.name %></h4>
                     <p><%= product.description %></p>

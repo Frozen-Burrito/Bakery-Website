@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const path = require('path');
+const { Buffer } = require('buffer');
 
 const imageBasePath = 'uploads/productImages';
 
@@ -21,6 +22,11 @@ const ProductSchema = new mongoose.Schema({
     },
 
     productImage: {
+        type: Buffer,
+        required: true
+    },
+
+    productImageType: {
         type: String,
         required: true
     },
@@ -39,8 +45,8 @@ const ProductSchema = new mongoose.Schema({
 })
 
 ProductSchema.virtual('productImagePath').get(function() {
-    if (this.productImage != null) {
-        return path.join('/', imageBasePath, this.productImage);
+    if (this.productImage != null && this.productImageType != null) {
+        return `data:${this.productImageType};charset=utf-8;base64,${this.productImage.toString('base64')}`;
     }
 });
 

@@ -1,5 +1,5 @@
-const fs = require('fs');
 const Product = require('../models/product');
+const { Buffer } = require('buffer');
 
 function renderNewProductPage(res, product, error = false) {
 
@@ -18,11 +18,19 @@ function renderNewProductPage(res, product, error = false) {
     }
 }
 
-function removeProductImage(filePath) {
-    fs.unlink(filePath, error => console.error(error));
+function saveProductImage(product, encodedImage) {
+    if (encodedImage == null) return;
+
+    const image = JSON.parse(encodedImage);
+    const imageMimeTypes = ['image/jpeg', 'image/png'];
+
+    if (image != null && imageMimeTypes.includes(image.type)){
+        product.productImage = new Buffer.from(image.data, 'base64');
+        product.productImageType = image.type;
+    }
 }
 
 module.exports = {
     renderNewProductPage,
-    removeProductImage,
+    saveProductImage,
 }

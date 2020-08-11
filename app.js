@@ -3,7 +3,6 @@ const expressLayouts = require('express-ejs-layouts')
 
 const dotenv = require('dotenv');
 
-const mongoose = require('mongoose');
 const connectDB = require('./config/dbConfig');
 
 const router = require('./routes/index');
@@ -25,6 +24,8 @@ app.use(expressLayouts);
 
 // Static files
 app.use(express.static('public'));
+
+app.use(express.urlencoded({ limit:'1mb', extended: false }));
 
 // Routes
 app.use('/', router);
