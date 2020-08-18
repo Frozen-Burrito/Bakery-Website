@@ -1,14 +1,14 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts')
 
-const dotenv = require('dotenv');
-
 const connectDB = require('./config/dbConfig');
 
 const router = require('./routes/index');
 const productRouter = require('./routes/products');
 
-dotenv.config({ path:'config.env' });
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config({ path:'config.env' });
+}
 
 const app = express();
 

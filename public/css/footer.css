@@ -1,0 +1,21 @@
+footer {
+    background-color: rgb(20, 20, 20);
+    padding: 1rem 0;
+}
+
+footer div.content {
+    max-width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer div.content p {
+    color: rgb(199, 199, 199);
+}
+
+footer div.content a {
+    color: rgb(240, 240, 240);
+}
