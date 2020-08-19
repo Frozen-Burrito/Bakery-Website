@@ -56,14 +56,19 @@ img {
     max-width: 100%;
 }
 
-section {
-    margin: 4rem 0;
+section, section.container {
+    margin: 4rem auto;
     text-align: center;
 }
 
-section img {
+img.picture {
     max-width: 80%;
     margin: 2rem auto;
+}
+
+#map {
+    width: 100%;
+    height: 60vh;
 }
 
 .container {
@@ -88,8 +93,8 @@ section img {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(4rem, 22rem);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(4rem, 30rem);
     gap: 2rem;
-
+    margin: 2rem 0 4rem 0;
 }
